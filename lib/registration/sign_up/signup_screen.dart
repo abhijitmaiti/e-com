@@ -59,6 +59,7 @@ class SignupScreen extends StatelessWidget {
                         ),
                         ElevatedButton(
                             //continue.....
+                            style: ButtonStyle(),
                             onPressed: (state is SignUpSubmitting)
                                 ? null
                                 : () {

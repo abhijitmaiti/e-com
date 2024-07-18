@@ -5,7 +5,7 @@ import 'package:telo/widgets/product_display.dart';
 
 class Grid extends StatelessWidget {
   late Result result;
-  Grid(this.result, {super.key});
+  Grid(this.result);
 
   @override
   Widget build(BuildContext context) {

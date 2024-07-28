@@ -8,7 +8,6 @@ class ProductRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Ratings',
@@ -18,9 +17,8 @@ class ProductRating extends StatelessWidget {
 
           children: [
             Expanded(
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                child:
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Text("4.5",
                   style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold)),
               SizedBox(width: 8),
@@ -28,12 +26,13 @@ class ProductRating extends StatelessWidget {
             ])),
             Expanded(
                 child: Column(
+
               children: [
-                _ratingProgress("5", 5.0, Colors.green, 10),
-                _ratingProgress("4", 5.0, Colors.lightGreenAccent, 10),
-                _ratingProgress("5", 5.0, Colors.lightGreen, 10),
-                _ratingProgress("2", 5.0, Colors.yellow, 10),
-                _ratingProgress("1", 5.0, Colors.red, 10),
+                _ratingProgress("5", 0.5, Colors.green, 10),
+                _ratingProgress("4", 0.5, Colors.lightGreenAccent, 10),
+                _ratingProgress("5", 0.5, Colors.lightGreen, 10),
+                _ratingProgress("2", 0.5, Colors.yellow, 10),
+                _ratingProgress("1", 0.5, Colors.red, 10),
                 Divider(),
                 Text("total ratings")
               ],
@@ -45,30 +44,17 @@ class ProductRating extends StatelessWidget {
   }
 
   _ratingProgress(title, progress, color, count) {
-    return Column(
+    return Row(
       children: [
-        Text(
-          title + ' ',
-          style: TextStyle(fontSize: 12, height: 1.8),
-        ),
-        Icon(
-          Icons.star,
-          size: 12,
-        ),
-        SizedBox(
-          width: 8,
-        ),
+        Text(title + ' ', style: TextStyle(fontSize: 12, height: 1.8)),
+        Icon(Icons.star, size: 12),
+        SizedBox(width: 8),
         Expanded(
             child: LinearProgressIndicator(
                 value: progress,
                 valueColor: AlwaysStoppedAnimation<Color>(color))),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          count.toString(),
-          style: TextStyle(fontSize: 12, height: 1.8),
-        ),
+        SizedBox(width: 8),
+        Text(count.toString(), style: TextStyle(fontSize: 12, height: 1.8)),
       ],
     );
   }
